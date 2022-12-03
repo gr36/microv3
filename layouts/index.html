@@ -5,31 +5,12 @@
 {{ partial "profile.html" . }}
 
 <div class="posts-wrapper">
-	<div class="main-post-list">
-		<div class="main-list-title"><h2>Blog Posts</h2></div>
-		{{ range $paginator.Pages }}
-			{{ partial "post-item.html" . }}
-		{{ end }}
+	<div class="desktop-layout">
+		{{ partial "desktop-layout.html" }}
 	</div>
-
-	<div class="sidebar">
-<div class="statuslol-latest">
-	<div class="list-title" style="margin-bottom: 10px;"><h2>Current Status</h2></div>
-	<script src="https://status.lol/gr36.js?time&link&fluent"></script>
-</div>
-<div class="list-title"><h2><a href="/categories/micro/">Micro Posts</a></h2></div>
-<div class="micro-posts">
-				{{ range first 3 $microposts }}
-							{{ partial "micro-item.html" . }}
-						{{ end }}
-</div>
-<div class="ad">
-<div class="list-title"><h2 style="margin-bottom: 20px; margin-top: 0;">Advert</h2></div>
-<div class="advert">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESI5KJI&placement=gregmorriscouk" id="_carbonads_js"></script>
-</div>
-</div>
-</div>
+	<div class="mobile-layout">
+		{{ partial "mobile-layout.html" }}
+	</div>
 </div>
 
 {{ if .IsHome }}
