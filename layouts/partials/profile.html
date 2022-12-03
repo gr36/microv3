@@ -1,0 +1,15 @@
+<div class="profile">
+  <section id="wrapper">
+    <div class="h-card">
+		<div class="profile-image">
+      		<a class="u-url" href="/">
+        		<img id="avatar" class="u-photo" src="{{ .Site.Author.avatar }}" 			width="96" height="96" />
+      </a>
+		</div>
+	<div class="profile-text">
+      <h1 class="p-name" rel="me">{{ .Site.Author.name }}</h1>
+      <h4 class="p-role">{{ .Site.Params.description | safeHTML }}</h4>
+</div>
+    </div>
+  </section>
+</div>

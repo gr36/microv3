@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+{{ $related := (.Site.Taxonomies.categories.essay) 3 }}
+
+{{ partial "profile.html" . }}
+<span class="separator" style="margin-top: 20px;margin-bottom: 10px;"><span class="divider"></span></span>
+
+<div class="single-post-wrapper">
+<div class="main-post-list">
+<article class="h-entry post">
+  <header>
+	{{ with .Title }}
+    <h1 class="post-title p-name">{{ . }}</h1>
+    {{ end }}
+    <h2 class="headline">
+      <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">
+        <a class="u-url dates" href="{{ .Permalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
+      </time>
+    </h2>
+  </header>
+
+  <section class="e-content post-body">
+      {{ .Content }}
+</section>
+</article>
+
+  {{ if .Site.Params.include_conversation }}
+<h2 style="color: var(--ghost-accent-color);" >Comments</h2> via webmention
+  <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+<div>{{ partial "conversation-link.html" . }}</div>
+  {{ end }}
+
+</div>
+
+<div class="sidebar" style="margin-top: 10px;">
+<div>
+<h2 style="color: var(--ghost-accent-color); margin-bottom: 10px;" >Advert</h2>
+  <div class="advert">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESI5KJI&placement=gregmorriscouk" id="_carbonads_js"></script>
+  </div>
+</div>
+<div class="related-posts">
+<h2 style="color: var(--ghost-accent-color); margin-bottom: 10px;" >Related Posts</h2>
+<div class="micro-posts">
+{{ range first 3 (after 1 $related) }}
+	{{ partial "summery-item.html" . }}
+{{ end }}
+</div>
+<div class="view-more"><a href="/categories/essay/">View more</a></div>
+
+</div>
+</div>
+</div>
+{{ end }}
+
+
+

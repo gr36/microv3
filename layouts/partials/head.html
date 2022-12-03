@@ -1,0 +1,35 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="{{ .Site.Author.name }}" name="author">
+
+{{ if .Title }}
+	<meta property="og:title" content="{{ .Title }}" />
+	<title>{{ .Title }}</title>
+{{ else }}
+    <meta property="og:title" content="{{ .Site.Title }}" />
+	<title>{{ .Site.Title }}</title>
+{{ end }}
+
+<!-- styling -->
+  <link href="{{ "assets/css/style.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link href="{{ "assets/css/highlight.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "custom.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
+  {{ range .Site.Params.plugins_css }}
+	    <link rel="stylesheet" href="{{ . }}" />
+    {{ end }}
+    {{ range $filename := .Site.Params.plugins_html }}
+    	{{ partial $filename $ }}
+    {{ end }}
+	<link rel="shortcut icon" href="https://micro.blog/{{ .Site.Author.username }}/favicon.png" type="image/x-icon" />
+
+    {{ if .RSSLink -}}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ "podcast.xml" | absURL }}" rel="alternate" type="application/rss+xml" title="Podcast" />
+      <link rel="alternate" type="application/json" title="{{ .Site.Title }}" href="{{ "feed.json" | absURL }}" />
+      <link rel="EditURI" type="application/rsd+xml" href="{{ "rsd.xml" | absURL }}" />
+    {{ end -}}
+
+ {{ partial "open_graph.html" . }}
+</head>
