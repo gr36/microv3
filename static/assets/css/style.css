@@ -241,6 +241,10 @@ li	{ list-style-type:circle; list-style-position:inside;}
 
 /* Post */
 
+.current-status {
+	display: none;
+}
+
 .posts-wrapper, .single-post-wrapper {
     display: flex;
     gap: 40px;
