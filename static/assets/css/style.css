@@ -58,23 +58,6 @@ body {
 	padding-inline-end: 10px;
 }
 
-.desktop-layout {
-	display: block;
-}
-.mobile-layout {
-	display: none;
-}
-
-@media only screen and (max-width: 600px) {
-	.desktop-layout {
-		display: none;
-	}
-	.mobile-layout {
-		display: block;
-	}
-
-}
-
 /* Profile */
 
 .nav-profile  {
