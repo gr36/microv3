@@ -1,0 +1,34 @@
+@media (prefers-color-scheme: dark) {
+	body { 
+				background-color: var(--darkmode-background);
+				color: var(--white-color);
+			}
+		a, a:visited, p a, p a:visited, nav.main-nav a, #footer a {
+				color: var(--white-color);
+			}
+b, strong {
+	color: var(--white-color);
+}
+		h1, h2, h3, h4 {
+			color: var(--white-color);
+				}
+	.statuslol {
+	color: var( --white-color) !important;
+	background: linear-gradient(to right, #0f2027, #203a43, #2c5364); 
+	border: solid 1px var( --white-color) !important;
+}
+
+.post-body code {
+	    background: #ffffff26;
+    	color: #fff;
+}
+
+#carbonads {
+    background-color: var(--darkmode-background);
+
+  }
+  #carbonads .carbon-poweredby {
+    color: var(--primary-text-color)
+  }
+
+}
