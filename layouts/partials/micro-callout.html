@@ -1,0 +1,12 @@
+{{ $microposts := .Site.Taxonomies.categories.micro }}
+
+<div class="mobile" style="margin-bottom: 60px;">
+<div class="list-title"><h2 style="margin-bottom: 20px;"><a href="/categories/micro/">Micro Posts</a></h2></div>
+<div class="micro-posts">
+    {{ range first 2 $microposts }}
+        {{ partial "micro-item.html" . }}
+    {{ end }}
+</div>
+<div class="view-more"><a href="/categories/micro/">View More</a></div>
+<span class="separator"><span class="divider"></span></span>
+</div>

@@ -1,6 +1,5 @@
 {{ define "main" }}
 
-{{ $microposts := .Site.Taxonomies.categories.micro }}
 {{ $paginator := .Paginate (.Site.Taxonomies.categories.essay) 5 }}
 {{ partial "profile.html" . }}
 
@@ -12,7 +11,11 @@
 <div class="posts-wrapper">
 	<div class="main-post-list">
 		<div class="main-list-title"><h2>Blog Posts</h2></div>
-		{{ range $paginator.Pages }}
+		{{ range first 1 $paginator.Pages }}
+			{{ partial "post-item.html" . }}
+		{{ end }}
+		{{ partial "microcallout.html" . }}
+		{{ range (after 1 $paginator.Pages) }}
 			{{ partial "post-item.html" . }}
 		{{ end }}
 	</div>
