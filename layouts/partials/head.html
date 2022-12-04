@@ -15,6 +15,10 @@
 <!-- styling -->
   <link href="{{ "assets/css/style.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
   <link href="{{ "assets/css/highlight.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link href="{{ "assets/css/ads.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link href="{{ "assets/css/status.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link href="{{ "assets/css/darkmode.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <link href="{{ "assets/css/mobilelayout.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ "custom.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
   {{ range .Site.Params.plugins_css }}
 	    <link rel="stylesheet" href="{{ . }}" />

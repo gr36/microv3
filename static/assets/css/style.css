@@ -1,6 +1,6 @@
-@import url(/static/assets/css/darkmode.css);
-@import url(/static/assets/css/mobilelayout.css);
-@import url(/static/assets/css/ads.css);
+@import url("/static/assets/css/ads.css");
+@import url("/static/assets/css/mobilelayout.css");
+@import url("/static/assets/css/darkmode.css");
 
 :root {
     --primary-text-color: #333;
@@ -60,6 +60,10 @@ body {
 	font-size: 15px;
 	padding-inline-start: 10px;
 	padding-inline-end: 10px;
+}
+
+.mobile {
+	display: none;
 }
 
 /* Profile */

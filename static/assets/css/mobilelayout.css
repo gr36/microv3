@@ -1,7 +1,7 @@
 @media only screen and (max-width: 600px) {
-	.current-status {
-		display: block;
-	}
+.mobile {
+	display: block;
+}
 
 	.post-body {
 	margin-bottom: 20px;
@@ -21,7 +21,7 @@ margin-top: 10px;
 }
 
 .statuslol {
-	flex-direction: row;
+	flex-direction: row !important;
 }
 
 .micro-posts {
